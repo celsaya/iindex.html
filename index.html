@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Turnamen CLASH SQUAD</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      color: white;
+    }
+    header {
+      background-image: url('https://cdn.cloudflare.steamstatic.com/steam/apps/1238840/ss_b6a12c99f7c88a1bbcc648fbcf4e1d0bda4d7fcf.1920x1080.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      text-align: center;
+      color: #FFD700;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .container {
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      box-sizing: border-box;
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid #FFD700;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #FFD700;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: #ffc800;
+      transform: translateY(-2px);
+    }
+    .wa-button {
+      background-color: #25D366;
+      color: white;
+      margin-top: 20px;
+    }
+    .wa-button:hover {
+      background-color: #1da851;
+    }
+    .payment-box {
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      margin-top: 30px;
+    }
+    .slot-counter {
+      text-align: center;
+      margin: 15px 0;
+      font-size: 1.2rem;
+      color: #FFD700;
+    }
+    .highlight {
+      color: #FFD700;
+      font-weight: bold;
+    }
+    .prize-box {
+      background-color: rgba(255, 215, 0, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #FFD700;
+    }
+    .rules-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .success-message {
+      display: none;
+      text-align: center;
+      color: #4CAF50;
+      font-size: 1.2rem;
+      margin: 20px 0;
+      padding: 15px;
+      background-color: rgba(76, 175, 80, 0.1);
+      border-radius: 8px;
+    }
+    .error-message {
+      color: #ff4444;
+      font-size: 0.9rem;
+      margin-top: 5px;
+      display: none;
+    }
+    .divider {
+      border-top: 1px solid #555;
+      margin: 20px 0;
+    }
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TURNAMEN CLASH SQUAD</h1>
+    <p>OFFLINE TOURNAMENT | Slot Terbatas 16 Tim</p>
+  </header>
+
+  <div class="container">
+    <div class="prize-box">
+      <h2>Hadiah Turnamen</h2>
+      <p><strong class="highlight">Juara 1:</strong> Rp250.000</p>
+      <p><strong class="highlight">Juara 2:</strong> Rp125.000</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-box">
+      <h3>SLOT: 16/16</h3>
+      <p><strong>Pendaftaran buka:</strong> 20 Mei 2025</p>
+      <p><strong>Setiap hari</strong></p>
+      <p><strong>Lokasi:</strong> Sekelling Larat dan Waitdal</p>
+      <p><strong>Catatan:</strong> Kedapatan orang luar KIC</p>
+      <p><strong>Mode:</strong> Bermain secara online/offline</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="rules-box">
+      <h3>Peraturan Turnamen:</h3>
+      <ul>
+        <li><strong>character:</strong> alok, keli, karolin, dan hayato</li>
+        <li><strong>SG2 ONLY</strong></li>
+        <li><strong>No Pet</strong></li>
+        <li><strong>No api unggun</strong></li>
+        <li><strong>No CHAT dan rege</strong></li>
+        <li><strong>No LT2 Dan atap</strong></li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Formulir Pendaftaran</h2>
+    <div class="slot-counter">Slot Tersedia: <span id="availableSlots">16</span>/16</div>
+    
+    <div class="success-message" id="successMessage">
+      Pendaftaran berhasil dikirim! Silakan menghubungi via WhatsApp di bawa🥰.
+    </div>
+    
+    <form id="registrationForm">
+      <label for="teamName">Nama Tim</label>
+      <input type="text" id="teamName" required>
+      <div class="error-message" id="teamNameError"></div>
+
+      <label for="leaderName">Nama Ketua Tim</label>
+      <input type="text" id="leaderName" required>
+      <div class="error-message" id="leaderNameError"></div>
+
+      <label for="members">Anggota Tim (Max 4)</label>
+      <textarea id="members" rows="3" placeholder="Pisahkan dengan koma (Contoh: Player1, Player2, Player3)" required></textarea>
+      <div class="error-message" id="membersError"></div>
+
+      <label for="idLeader">ID Leader</label>
+      <input type="text" id="idLeader" placeholder="Contoh: 123456789" required>
+      <div class="error-message" id="idLeaderError"></div>
+
+      <label for="waNumber">No WhatsApp</label>
+      <input type="tel" id="waNumber" placeholder="Contoh: 082212345678" required>
+      <div class="error-message" id="waNumberError"></div>
+
+      <button type="submit">Kirim Pendaftaran</button>
+    </form>
+
+    <div class="payment-box">
+      <h3>Biaya Registrasi</h3>
+      <p>Biaya pendaftaran <strong class="highlight">Rp30.000</strong> per tim</p>
+        </p>metode pembayaran menggunakan DANA,GOPAY atau KES
+      <p>Konfirmasi pembayaran wajib dengan mengirim bukti transfer via WhatsApp.</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Kontak Panitia</h3>
+      <p><strong>Instagram:</strong> @orlando__</p>
+      <p><strong>WhatsApp:</strong> 082260493672</p>
+    </div>
+
+    <a href="https://wa.me/6282260493672" target="_blank">
+      <button class="wa-button">Hubungi Admin via WhatsApp</button>
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 Turnamen CLASH SQUAD - Diselenggarakan oleh Admin
+  </footer>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Validasi form
+      let isValid = true;
+      const teamName = document.getElementById('teamName').value.trim();
+      const leaderName = document.getElementById('leaderName').value.trim();
+      const members = document.getElementById('members').value.trim();
+      const idLeader = document.getElementById('idLeader').value.trim();
+      const waNumber = document.getElementById('waNumber').value.trim();
+      
+      // Reset error messages
+      document.querySelectorAll('.error-message').forEach(el => {
+        el.style.display = 'none';
+      });
+      
+      // Validasi Nama Tim
+      if (teamName === '') {
+        document.getElementById('teamNameError').textContent = 'Nama tim wajib diisi';
+        document.getElementById('teamNameError').style.display = 'block';
+        isValid = false;
+      }
+      
+      // Validasi Nama Ketua
+      if (leaderName === '') {
+        document.getElementById('leaderNameError').textContent = 'Nama ketua tim wajib diisi';
+        document.getElementById('leaderNameError').style.display = 'block';
+        isValid = false;
+      }
+      
+      // Validasi Anggota Tim
+      if (members === '') {
+        document.getElementById('membersError').textContent = 'Anggota tim wajib diisi';
+        document.getElementById('membersError').style.display = 'block';
+        isValid = false;
+      }
+      
+      // Validasi ID Leader
+      if (idLeader === '') {
+        document.getElementById('idLeaderError').textContent = 'ID leader wajib diisi';
+        document.getElementById('idLeaderError').style.display = 'block';
+        isValid = false;
+      } else if (!/^\d+$/.test(idLeader)) {
+        document.getElementById('idLeaderError').textContent = 'ID harus berupa angka';
+        document.getElementById('idLeaderError').style.display = 'block';
+        isValid = false;
+      }
+      
+      // Validasi Nomor WhatsApp
+      if (waNumber === '') {
+        document.getElementById('waNumberError').textContent = 'Nomor WhatsApp wajib diisi';
+        document.getElementById('waNumberError').style.display = 'block';
+        isValid = false;
+      } else if (!/^[0-9]+$/.test(waNumber)) {
+        document.getElementById('waNumberError').textContent = 'Nomor harus berupa angka';
+        document.getElementById('waNumberError').style.display = 'block';
+        isValid = false;
+      } else if (waNumber.length < 10) {
+        document.getElementById('waNumberError').textContent = 'Nomor WhatsApp terlalu pendek';
+        document.getElementById('waNumberError').style.display = 'block';
+        isValid = false;
+      }
+      
+      if (isValid) {
+        // Kurangi slot tersedia
+        const availableSlots = document.getElementById('availableSlots');
+        let slots = parseInt(availableSlots.textContent);
+        if (slots > 0) {
+          slots--;
+          availableSlots.textContent = slots;
+          
+          // Tampilkan pesan sukses
+          document.getElementById('successMessage').style.display = 'block';
+          
+          // Reset form
+          document.getElementById('registrationForm').reset();
+          
+          // Scroll ke pesan sukses
+          document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+          
+          // Kirim data ke server (simulasi)
+          setTimeout(() => {
+            // Ini hanya simulasi, di implementasi nyata gunakan AJAX/Fetch
+            console.log('Data pendaftaran:', {
+              teamName,
+              leaderName,
+              members: members.split(',').map(m => m.trim()),
+              idLeader,
+              waNumber
+            });
+          }, 1000);
+        } else {
+          alert('Maaf, slot pendaftaran sudah penuh!');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
